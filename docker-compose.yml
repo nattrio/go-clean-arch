@@ -13,6 +13,8 @@ services:
       - "5432:5432"
     volumes:
       - postgres-db:/var/lib/postgresql/data
+    networks:
+      - fullstack
   app:
     build: .
     container_name: "rest-api"
@@ -22,6 +24,12 @@ services:
       - DB_HOST=db # Use the service name "db" as the host
     depends_on:
       - db
+    networks:
+      - fullstack
 
 volumes:
   postgres-db:
+
+networks:
+  fullstack:
+    driver: bridge
