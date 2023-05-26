@@ -86,25 +86,6 @@
       "tests": []
     },
     {
-      "_id": "37680839-53c8-49ea-ada7-03bb16c17d47",
-      "colId": "71a5d697-70e7-477b-970d-9a18f808d6ea",
-      "containerId": "",
-      "name": "Update Copy",
-      "url": "http://127.0.0.1:3000/api/notes/1",
-      "method": "PATCH",
-      "sortNum": 60000,
-      "created": "2023-05-18T11:08:14.777Z",
-      "modified": "2023-05-18T11:08:14.777Z",
-      "headers": [],
-      "params": [],
-      "body": {
-        "type": "json",
-        "raw": "{\n  \"content\": \"test-update\"\n}",
-        "form": []
-      },
-      "tests": []
-    },
-    {
       "_id": "b8b44231-e56c-4c98-80df-05daefbf3782",
       "colId": "71a5d697-70e7-477b-970d-9a18f808d6ea",
       "containerId": "",
