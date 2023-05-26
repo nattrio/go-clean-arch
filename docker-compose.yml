@@ -26,6 +26,16 @@ services:
       - db
     networks:
       - fullstack
+    command: >
+      /bin/sh -c "
+        while ! nc -z -w1 db 5432;
+        do
+          echo waiting for db;
+          sleep 1;
+        done;
+        echo db is ready!;
+        ./main
+        "
 
 volumes:
   postgres-db:
