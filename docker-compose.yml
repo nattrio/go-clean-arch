@@ -1,15 +1,6 @@
 version: "3.8"
 
 services:
-  app:
-    build: .
-    container_name: "rest-api"
-    ports:
-      - "3000:3000"
-    environment:
-      - DB_HOST=db # Use the service name "db" as the host
-    depends_on:
-      - db
   db:
     image: postgres:15.3-alpine
     container_name: "database"
@@ -22,6 +13,15 @@ services:
       - "5432:5432"
     volumes:
       - postgres-db:/var/lib/postgresql/data
+  app:
+    build: .
+    container_name: "rest-api"
+    ports:
+      - "3000:3000"
+    environment:
+      - DB_HOST=db # Use the service name "db" as the host
+    depends_on:
+      - db
 
 volumes:
   postgres-db:
